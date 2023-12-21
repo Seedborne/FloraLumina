@@ -1,0 +1,398 @@
+[gd_scene load_steps=33 format=3 uid="uid://dtedicxeulmt7"]
+
+[ext_resource type="Texture2D" uid="uid://6kmpe40b06l1" path="res://art/day_par_cloudy.png" id="1_2neu4"]
+[ext_resource type="Script" path="res://garden.gd" id="1_5yvci"]
+[ext_resource type="Script" path="res://UI.gd" id="1_dhhxu"]
+[ext_resource type="FontFile" uid="uid://vgv1ku8o106o" path="res://art/Harvest Season.otf" id="1_wesgo"]
+[ext_resource type="Script" path="res://day_night_cycle.gd" id="2_unypw"]
+[ext_resource type="Script" path="res://pots_panel.gd" id="4_8lf2f"]
+[ext_resource type="Script" path="res://shop_panel.gd" id="4_j6n7w"]
+[ext_resource type="Script" path="res://Plot1.gd" id="4_niybl"]
+[ext_resource type="Texture2D" uid="uid://o5200yyxemlb" path="res://art/snowflake_particle.png" id="5_7oc70"]
+[ext_resource type="Script" path="res://Plot2.gd" id="5_arccy"]
+[ext_resource type="Script" path="res://Plot3.gd" id="6_bis55"]
+[ext_resource type="Texture2D" uid="uid://fw0qo8gqnrrg" path="res://art/rain_particle.png" id="6_l4n25"]
+[ext_resource type="Script" path="res://Plot4.gd" id="7_0db5d"]
+[ext_resource type="Script" path="res://Plot5.gd" id="8_8vg88"]
+[ext_resource type="Script" path="res://Plot6.gd" id="9_nekkl"]
+[ext_resource type="Script" path="res://Plot7.gd" id="10_uycm7"]
+[ext_resource type="Script" path="res://Plot8.gd" id="11_6g1w0"]
+[ext_resource type="AudioStream" uid="uid://c7d4xbb8lk1d6" path="res://art/day_music_1.mp3" id="16_djtgq"]
+[ext_resource type="AudioStream" uid="uid://d0ese5qckr6hj" path="res://art/day_sounds.mp3" id="17_xsv7e"]
+[ext_resource type="AudioStream" uid="uid://c024lbagfvmei" path="res://art/night_music_1.mp3" id="18_fx4gd"]
+[ext_resource type="AudioStream" uid="uid://wrtyt8n7i48k" path="res://art/night_sounds.mp3" id="19_xj0mo"]
+[ext_resource type="AudioStream" uid="uid://csdcst86jx33v" path="res://art/rain_sounds.mp3" id="20_n4gkc"]
+[ext_resource type="AudioStream" uid="uid://c6fx0wprxvi4y" path="res://art/snow_sounds.mp3" id="21_id4d2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e7rh5"]
+bg_color = Color(0.470588, 0.419608, 0.301961, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fgu5e"]
+content_margin_left = 60.0
+content_margin_top = 18.0
+content_margin_right = 60.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5lgtf"]
+content_margin_left = 60.0
+content_margin_top = 18.0
+content_margin_right = 60.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c46uu"]
+content_margin_left = 60.0
+content_margin_top = 18.0
+content_margin_right = 60.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gn6po"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gp61c"]
+bg_color = Color(0.470588, 0.419608, 0.301961, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_c0b8v"]
+diffuse_texture = ExtResource("5_7oc70")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_3vgf2"]
+diffuse_texture = ExtResource("6_l4n25")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rstih"]
+
+[node name="Garden" type="Node2D"]
+script = ExtResource("1_5yvci")
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("1_dhhxu")
+
+[node name="ShopButton" type="Button" parent="UI"]
+offset_left = 1032.0
+offset_top = 584.0
+offset_right = 1137.0
+offset_bottom = 645.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 40
+text = "Shop"
+flat = true
+
+[node name="ShopPanel" type="Panel" parent="UI/ShopButton"]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -9.829
+anchor_top = -8.0
+anchor_right = -9.829
+anchor_bottom = -8.0
+offset_left = 0.0450439
+offset_right = 1152.05
+offset_bottom = 552.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_e7rh5")
+script = ExtResource("4_j6n7w")
+
+[node name="ShopContainer" type="TabContainer" parent="UI/ShopButton/ShopPanel"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 552.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/tab_selected = SubResource("StyleBoxEmpty_fgu5e")
+theme_override_styles/tab_hovered = SubResource("StyleBoxEmpty_5lgtf")
+theme_override_styles/tab_unselected = SubResource("StyleBoxEmpty_c46uu")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_gn6po")
+tab_alignment = 1
+
+[node name="Pots" type="GridContainer" parent="UI/ShopButton/ShopPanel/ShopContainer"]
+layout_mode = 2
+columns = 5
+
+[node name="Daytime Seeds" type="GridContainer" parent="UI/ShopButton/ShopPanel/ShopContainer"]
+visible = false
+layout_mode = 2
+columns = 5
+
+[node name="Nighttime Seeds" type="GridContainer" parent="UI/ShopButton/ShopPanel/ShopContainer"]
+visible = false
+layout_mode = 2
+columns = 5
+
+[node name="Fertilizer" type="GridContainer" parent="UI/ShopButton/ShopPanel/ShopContainer"]
+visible = false
+layout_mode = 2
+columns = 5
+
+[node name="CloseShop" type="Button" parent="UI/ShopButton/ShopPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.015
+anchor_right = 1.0
+anchor_bottom = 0.015
+offset_left = -40.0
+offset_top = -24.28
+offset_right = -10.0
+offset_bottom = 50.72
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 40
+text = "x"
+flat = true
+
+[node name="PotsButton" type="Button" parent="UI"]
+offset_left = 16.0
+offset_top = 584.0
+offset_right = 112.0
+offset_bottom = 645.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 40
+text = "Pots"
+flat = true
+
+[node name="PotsPanel" type="Panel" parent="UI/PotsButton"]
+visible = false
+z_index = 1
+custom_minimum_size = Vector2(1152, 80)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -3.461
+anchor_top = 0.013
+anchor_right = -3.461
+anchor_bottom = 0.013
+offset_left = 316.256
+offset_top = -16.793
+offset_right = 1468.26
+offset_bottom = 63.207
+theme_override_styles/panel = SubResource("StyleBoxFlat_gp61c")
+script = ExtResource("4_8lf2f")
+
+[node name="PotsContainer" type="HBoxContainer" parent="UI/PotsButton/PotsPanel"]
+custom_minimum_size = Vector2(1152, 80)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -12.2
+anchor_right = -12.2
+offset_left = 14054.4
+offset_right = 15206.4
+offset_bottom = 80.0
+
+[node name="ClosePots" type="Button" parent="UI/PotsButton/PotsPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.015
+anchor_right = 1.0
+anchor_bottom = 0.015
+offset_left = -31.999
+offset_top = -7.975
+offset_right = -7.99902
+offset_bottom = 41.025
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 30
+text = "x"
+flat = true
+
+[node name="PlantButton" type="Button" parent="UI"]
+offset_left = 504.0
+offset_top = 576.0
+offset_right = 645.0
+offset_bottom = 651.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 50
+text = "Plant"
+flat = true
+
+[node name="PlantPanel" type="Panel" parent="UI/PlantButton"]
+visible = false
+custom_minimum_size = Vector2(1152, 80)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -3.461
+anchor_top = 0.013
+anchor_right = -3.461
+anchor_bottom = 0.013
+offset_left = -15.999
+offset_top = -8.975
+offset_right = 1136.0
+offset_bottom = 71.025
+theme_override_styles/panel = SubResource("StyleBoxFlat_gp61c")
+
+[node name="PlantContainer" type="HBoxContainer" parent="UI/PlantButton/PlantPanel"]
+custom_minimum_size = Vector2(1152, 80)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -12.2
+anchor_right = -12.2
+offset_left = 14054.4
+offset_right = 15206.4
+offset_bottom = 80.0
+
+[node name="ClosePlant" type="Button" parent="UI/PlantButton/PlantPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.015
+anchor_right = 1.0
+anchor_bottom = 0.015
+offset_left = -31.999
+offset_top = -7.975
+offset_right = -7.99902
+offset_bottom = 41.025
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 30
+text = "x"
+flat = true
+
+[node name="ClockLabel" type="Label" parent="UI"]
+offset_left = 504.0
+offset_top = 16.0
+offset_right = 648.0
+offset_bottom = 83.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+
+[node name="GardenDecor" type="Sprite2D" parent="."]
+
+[node name="GardenBackground" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(1, 1.0125)
+texture = ExtResource("1_2neu4")
+
+[node name="SnowParticles" type="CPUParticles2D" parent="GardenBackground"]
+position = Vector2(0, -327.901)
+emitting = false
+amount = 30
+lifetime = 1.2
+preprocess = 10.0
+speed_scale = 0.15
+texture = SubResource("CanvasTexture_c0b8v")
+emission_shape = 3
+emission_rect_extents = Vector2(575, 1)
+scale_amount_min = 0.1
+scale_amount_max = 0.15
+
+[node name="RainParticles" type="CPUParticles2D" parent="GardenBackground"]
+position = Vector2(0, -383.21)
+emitting = false
+amount = 40
+lifetime = 1.2
+preprocess = 2.0
+texture = SubResource("CanvasTexture_3vgf2")
+emission_shape = 3
+emission_rect_extents = Vector2(575, 1)
+scale_amount_min = 0.05
+scale_amount_max = 0.08
+
+[node name="PlotsContainer" type="Node2D" parent="."]
+
+[node name="Plot1" type="Node2D" parent="PlotsContainer"]
+position = Vector2(664, 520)
+script = ExtResource("4_niybl")
+
+[node name="Area2D" type="Area2D" parent="PlotsContainer/Plot1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlotsContainer/Plot1/Area2D"]
+self_modulate = Color(1, 1, 0.282353, 1)
+scale = Vector2(4, 4)
+shape = SubResource("CircleShape2D_rstih")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Plot2" type="Node2D" parent="PlotsContainer"]
+script = ExtResource("5_arccy")
+
+[node name="Plot3" type="Node2D" parent="PlotsContainer"]
+position = Vector2(511, 359)
+script = ExtResource("6_bis55")
+
+[node name="Area2D" type="Area2D" parent="PlotsContainer/Plot3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlotsContainer/Plot3/Area2D"]
+self_modulate = Color(1, 1, 0.282353, 1)
+scale = Vector2(4, 4)
+shape = SubResource("CircleShape2D_rstih")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Plot4" type="Node2D" parent="PlotsContainer"]
+position = Vector2(782, 358)
+script = ExtResource("7_0db5d")
+
+[node name="Plot5" type="Node2D" parent="PlotsContainer"]
+position = Vector2(924, 528)
+script = ExtResource("8_8vg88")
+
+[node name="Plot6" type="Node2D" parent="PlotsContainer"]
+position = Vector2(244, 359)
+script = ExtResource("9_nekkl")
+
+[node name="Plot7" type="Node2D" parent="PlotsContainer"]
+position = Vector2(119, 529)
+script = ExtResource("10_uycm7")
+
+[node name="Plot8" type="Node2D" parent="PlotsContainer"]
+position = Vector2(1029, 357)
+script = ExtResource("11_6g1w0")
+
+[node name="DayNightCycle" type="Timer" parent="."]
+wait_time = 120.0
+autostart = true
+script = ExtResource("2_unypw")
+
+[node name="DayMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_djtgq")
+volume_db = -5.0
+
+[node name="DaySounds" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_xsv7e")
+
+[node name="NightMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_fx4gd")
+volume_db = -6.0
+
+[node name="NightSounds" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("19_xj0mo")
+volume_db = 10.0
+
+[node name="RainSounds" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("20_n4gkc")
+volume_db = 6.0
+
+[node name="SnowSounds" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("21_id4d2")
+volume_db = 18.0
+
+[connection signal="pressed" from="UI/ShopButton" to="UI" method="_on_shop_button_pressed"]
+[connection signal="pressed" from="UI/ShopButton/ShopPanel/CloseShop" to="UI" method="_on_close_shop_pressed"]
+[connection signal="pressed" from="UI/PotsButton" to="UI" method="_on_pots_button_pressed"]
+[connection signal="pressed" from="UI/PotsButton/PotsPanel/ClosePots" to="UI" method="_on_close_pots_pressed"]
+[connection signal="pressed" from="UI/PlantButton" to="UI" method="_on_plant_button_pressed"]
+[connection signal="pressed" from="UI/PlantButton/PlantPanel/ClosePlant" to="UI" method="_on_close_plant_pressed"]
+[connection signal="timeout" from="DayNightCycle" to="DayNightCycle" method="_on_timeout"]

@@ -1,0 +1,196 @@
+[gd_scene load_steps=13 format=3 uid="uid://dgkxauyhyqpln"]
+
+[ext_resource type="Texture2D" uid="uid://cw4n71txr5yii" path="res://art/LunarTulipSeed.png" id="1_l0241"]
+[ext_resource type="Texture2D" uid="uid://b55y5phiku21e" path="res://art/LunarTulipSeedHover.png" id="2_vji5t"]
+[ext_resource type="Script" path="res://lunar_tulip.gd" id="3_i0nyi"]
+[ext_resource type="FontFile" uid="uid://vgv1ku8o106o" path="res://art/Harvest Season.otf" id="4_yukt5"]
+[ext_resource type="Texture2D" uid="uid://fw0qo8gqnrrg" path="res://art/rain_particle.png" id="5_nddbv"]
+[ext_resource type="AudioStream" uid="uid://531hhrg0vrob" path="res://art/water_plant_sound.mp3" id="6_ggmxw"]
+[ext_resource type="AudioStream" uid="uid://o660qafg4t38" path="res://art/spray_sound.mp3" id="7_u1g8l"]
+[ext_resource type="AudioStream" uid="uid://cjyfxq273tw54" path="res://art/prune_sound.mp3" id="8_7w2my"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xkjcm"]
+bg_color = Color(0.470588, 0.419608, 0.301961, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7g5h1"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 16.0
+expand_margin_right = 16.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v3dw1"]
+bg_color = Color(0.917647, 0.917647, 0.917647, 0.407843)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 16.0
+expand_margin_right = 16.0
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_xm3xf"]
+diffuse_texture = ExtResource("5_nddbv")
+
+[node name="LunarTulip" type="TextureButton"]
+z_index = 1
+offset_left = -9.0
+offset_top = -4.0
+offset_right = 380.0
+offset_bottom = 487.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("1_l0241")
+texture_hover = ExtResource("2_vji5t")
+script = ExtResource("3_i0nyi")
+
+[node name="TulipTimer" type="Timer" parent="."]
+wait_time = 60.0
+
+[node name="TulipPanel" type="Panel" parent="."]
+visible = false
+z_index = 1
+custom_minimum_size = Vector2(1400, 400)
+layout_mode = 0
+offset_left = -470.0
+offset_top = 190.0
+offset_right = 930.0
+offset_bottom = 590.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xkjcm")
+
+[node name="TulipLabel" type="Label" parent="TulipPanel"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 29.9998
+offset_right = 380.0
+offset_bottom = 66.9998
+scale = Vector2(4, 4)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("4_yukt5")
+theme_override_font_sizes/font_size = 25
+text = "Test"
+horizontal_alignment = 1
+
+[node name="WaterButton" type="Button" parent="TulipPanel"]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 185.0
+offset_right = 400.0
+offset_bottom = 333.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("4_yukt5")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_7g5h1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_v3dw1")
+text = "Water"
+
+[node name="FertilizerButton" type="Button" parent="TulipPanel"]
+layout_mode = 0
+offset_left = 905.0
+offset_top = 185.0
+offset_right = 1302.0
+offset_bottom = 333.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("4_yukt5")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_7g5h1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_v3dw1")
+text = "Fertilize"
+
+[node name="PruneButton" type="Button" parent="TulipPanel"]
+layout_mode = 0
+offset_left = 500.0
+offset_top = 185.0
+offset_right = 807.0
+offset_bottom = 333.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("4_yukt5")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_7g5h1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_v3dw1")
+text = "Prune"
+
+[node name="CloseButton" type="Button" parent="TulipPanel"]
+layout_mode = 0
+offset_left = 1280.0
+offset_top = -5.0
+offset_right = 1387.0
+offset_bottom = 135.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("4_yukt5")
+theme_override_font_sizes/font_size = 100
+text = "x"
+flat = true
+
+[node name="WaterParticles" type="CPUParticles2D" parent="."]
+z_index = 2
+position = Vector2(225, -295)
+emitting = false
+amount = 20
+lifetime = 0.7
+one_shot = true
+texture = SubResource("CanvasTexture_xm3xf")
+emission_shape = 3
+emission_rect_extents = Vector2(200, 1)
+scale_amount_min = 0.1
+scale_amount_max = 0.15
+
+[node name="FertilizerParticles" type="CPUParticles2D" parent="."]
+z_index = 2
+position = Vector2(225, -295)
+emitting = false
+amount = 20
+lifetime = 0.7
+one_shot = true
+emission_shape = 3
+emission_rect_extents = Vector2(200, 1)
+
+[node name="WaterTimer" type="Timer" parent="."]
+wait_time = 40.0
+one_shot = true
+
+[node name="PruneTimer" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+
+[node name="WaterSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_ggmxw")
+volume_db = 18.0
+
+[node name="FertilizerSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_u1g8l")
+volume_db = 4.0
+
+[node name="PruneSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_7w2my")
+volume_db = 6.0
+
+[connection signal="pressed" from="." to="." method="_on_lunar_tulip_pressed"]
+[connection signal="timeout" from="TulipTimer" to="." method="_on_tulip_timer_timeout"]
+[connection signal="pressed" from="TulipPanel/WaterButton" to="." method="_on_water_button_pressed"]
+[connection signal="pressed" from="TulipPanel/FertilizerButton" to="." method="_on_fertilizer_button_pressed"]
+[connection signal="pressed" from="TulipPanel/PruneButton" to="." method="_on_prune_button_pressed"]
+[connection signal="pressed" from="TulipPanel/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="timeout" from="WaterTimer" to="." method="_on_water_timer_timeout"]
+[connection signal="timeout" from="PruneTimer" to="." method="_on_prune_timer_timeout"]

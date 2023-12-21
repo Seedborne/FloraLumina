@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://or4otw7acdon"]
+
+[ext_resource type="Texture2D" uid="uid://xbk7igfuti7" path="res://art/BasicPot.png" id="1_n4g6v"]
+[ext_resource type="Script" path="res://basic_pot.gd" id="2_4o27a"]
+
+[node name="BasicPot" type="Sprite2D"]
+position = Vector2(40, 40)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_n4g6v")
+script = ExtResource("2_4o27a")

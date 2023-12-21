@@ -1,0 +1,246 @@
+[gd_scene load_steps=17 format=3 uid="uid://dj3pfk5y4np2t"]
+
+[ext_resource type="Texture2D" uid="uid://5gi2wgh177uo" path="res://art/BlazingSnapdragonSeed.png" id="1_r3gwh"]
+[ext_resource type="Texture2D" uid="uid://fpx0hm0tudeb" path="res://art/BlazingSnapdragonSeedHover.png" id="2_g6gic"]
+[ext_resource type="Script" path="res://blazing_snapdragon.gd" id="3_y1un1"]
+[ext_resource type="FontFile" uid="uid://vgv1ku8o106o" path="res://art/Harvest Season.otf" id="4_e2foq"]
+[ext_resource type="Texture2D" uid="uid://fw0qo8gqnrrg" path="res://art/rain_particle.png" id="5_h8mme"]
+[ext_resource type="AudioStream" uid="uid://531hhrg0vrob" path="res://art/water_plant_sound.mp3" id="6_jmc7t"]
+[ext_resource type="AudioStream" uid="uid://o660qafg4t38" path="res://art/spray_sound.mp3" id="7_bi6ke"]
+[ext_resource type="AudioStream" uid="uid://cjyfxq273tw54" path="res://art/prune_sound.mp3" id="8_560c2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ft5n"]
+bg_color = Color(0.470588, 0.419608, 0.301961, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wxrrp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 16.0
+expand_margin_right = 16.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4kwgu"]
+bg_color = Color(0.917647, 0.917647, 0.917647, 0.407843)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 16.0
+expand_margin_right = 16.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b2er4"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 16.0
+expand_margin_right = 16.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_he343"]
+bg_color = Color(0.917647, 0.917647, 0.917647, 0.407843)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 16.0
+expand_margin_right = 16.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oya60"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 16.0
+expand_margin_right = 16.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n76er"]
+bg_color = Color(0.917647, 0.917647, 0.917647, 0.407843)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 16.0
+expand_margin_right = 16.0
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8b5wx"]
+diffuse_texture = ExtResource("5_h8mme")
+
+[node name="BlazingSnapdragon" type="TextureButton"]
+z_index = 1
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("1_r3gwh")
+texture_hover = ExtResource("2_g6gic")
+script = ExtResource("3_y1un1")
+
+[node name="SnapdragonTimer" type="Timer" parent="."]
+wait_time = 300.0
+
+[node name="SnapdragonPanel" type="Panel" parent="."]
+visible = false
+z_index = 1
+custom_minimum_size = Vector2(1400, 400)
+layout_mode = 0
+offset_left = -500.0
+offset_top = 190.0
+offset_right = 900.0
+offset_bottom = 590.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1ft5n")
+
+[node name="SnapdragonLabel" type="Label" parent="SnapdragonPanel"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 15.0
+offset_right = 378.0
+offset_bottom = 52.0
+scale = Vector2(4, 4)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("4_e2foq")
+theme_override_font_sizes/font_size = 25
+text = "Test"
+horizontal_alignment = 1
+
+[node name="WaterButton" type="Button" parent="SnapdragonPanel"]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 185.0
+offset_right = 400.0
+offset_bottom = 333.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("4_e2foq")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_wxrrp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4kwgu")
+text = "Water"
+
+[node name="FertilizerButton" type="Button" parent="SnapdragonPanel"]
+layout_mode = 0
+offset_left = 905.0
+offset_top = 185.0
+offset_right = 1302.0
+offset_bottom = 333.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("4_e2foq")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_b2er4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_he343")
+text = "Fertilize"
+
+[node name="PruneButton" type="Button" parent="SnapdragonPanel"]
+layout_mode = 0
+offset_left = 500.0
+offset_top = 185.0
+offset_right = 807.0
+offset_bottom = 333.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("4_e2foq")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_oya60")
+theme_override_styles/hover = SubResource("StyleBoxFlat_n76er")
+text = "Prune"
+
+[node name="CloseButton" type="Button" parent="SnapdragonPanel"]
+layout_mode = 0
+offset_left = 1280.0
+offset_top = -5.0
+offset_right = 1387.0
+offset_bottom = 135.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("4_e2foq")
+theme_override_font_sizes/font_size = 100
+text = "x"
+flat = true
+
+[node name="WaterParticles" type="CPUParticles2D" parent="."]
+z_index = 2
+position = Vector2(225, -295)
+emitting = false
+amount = 20
+lifetime = 0.7
+one_shot = true
+texture = SubResource("CanvasTexture_8b5wx")
+emission_shape = 3
+emission_rect_extents = Vector2(200, 1)
+scale_amount_min = 0.1
+scale_amount_max = 0.15
+
+[node name="FertilizerParticles" type="CPUParticles2D" parent="."]
+z_index = 2
+position = Vector2(225, -295)
+emitting = false
+amount = 20
+lifetime = 0.7
+one_shot = true
+emission_shape = 3
+emission_rect_extents = Vector2(200, 1)
+
+[node name="WaterTimer" type="Timer" parent="."]
+wait_time = 40.0
+one_shot = true
+
+[node name="PruneTimer" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+
+[node name="WaterSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_jmc7t")
+volume_db = 18.0
+
+[node name="FertilizerSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_bi6ke")
+volume_db = 4.0
+
+[node name="PruneSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_560c2")
+volume_db = 6.0
+
+[connection signal="pressed" from="." to="." method="_on_blazing_snapdragon_pressed"]
+[connection signal="timeout" from="SnapdragonTimer" to="." method="_on_snapdragon_timer_timeout"]
+[connection signal="pressed" from="SnapdragonPanel/WaterButton" to="." method="_on_water_button_pressed"]
+[connection signal="pressed" from="SnapdragonPanel/FertilizerButton" to="." method="_on_fertilizer_button_pressed"]
+[connection signal="pressed" from="SnapdragonPanel/PruneButton" to="." method="_on_prune_button_pressed"]
+[connection signal="pressed" from="SnapdragonPanel/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="timeout" from="WaterTimer" to="." method="_on_water_timer_timeout"]
+[connection signal="timeout" from="PruneTimer" to="." method="_on_prune_timer_timeout"]

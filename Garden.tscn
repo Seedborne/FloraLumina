@@ -1,0 +1,1593 @@
+[gd_scene load_steps=71 format=3 uid="uid://dtedicxeulmt7"]
+
+[ext_resource type="Texture2D" uid="uid://6kmpe40b06l1" path="res://art/day_par_cloudy.png" id="1_2neu4"]
+[ext_resource type="Script" path="res://garden.gd" id="1_5yvci"]
+[ext_resource type="Script" path="res://UI.gd" id="1_dhhxu"]
+[ext_resource type="FontFile" uid="uid://vgv1ku8o106o" path="res://art/Harvest Season.otf" id="1_wesgo"]
+[ext_resource type="Script" path="res://day_night_cycle.gd" id="2_unypw"]
+[ext_resource type="Script" path="res://Plot1.gd" id="4_niybl"]
+[ext_resource type="Texture2D" uid="uid://bf6itg781p21v" path="res://art/DaisySeedSprite.png" id="4_qsf20"]
+[ext_resource type="Texture2D" uid="uid://o5200yyxemlb" path="res://art/snowflake_particle.png" id="5_7oc70"]
+[ext_resource type="Theme" uid="uid://bakmo33u5tbec" path="res://Theme.tres" id="5_26ih2"]
+[ext_resource type="Script" path="res://Plot2.gd" id="5_arccy"]
+[ext_resource type="Script" path="res://popup.gd" id="5_byjdr"]
+[ext_resource type="Texture2D" uid="uid://n7kctarf4smq" path="res://art/AzureSeedSprite.png" id="5_kkjbw"]
+[ext_resource type="Script" path="res://buy_daisy_button.gd" id="5_kuw2h"]
+[ext_resource type="Texture2D" uid="uid://2qdsoc4owkms" path="res://art/DaisySeedSpriteHover.png" id="5_swyqo"]
+[ext_resource type="Script" path="res://Plot3.gd" id="6_bis55"]
+[ext_resource type="Texture2D" uid="uid://fw0qo8gqnrrg" path="res://art/rain_particle.png" id="6_l4n25"]
+[ext_resource type="Script" path="res://Plot4.gd" id="7_0db5d"]
+[ext_resource type="Script" path="res://buy_bell_button.gd" id="7_37lns"]
+[ext_resource type="Script" path="res://Plot5.gd" id="8_8vg88"]
+[ext_resource type="Texture2D" uid="uid://dv7w3djrwn0cl" path="res://art/AzureSeedSpriteHover.png" id="8_f4o7m"]
+[ext_resource type="Texture2D" uid="uid://bpl06j5sb4hvm" path="res://art/openlock.png" id="9_1buhr"]
+[ext_resource type="Script" path="res://Plot6.gd" id="9_nekkl"]
+[ext_resource type="Texture2D" uid="uid://dck1amyj0frmh" path="res://art/hoveropenlock.png" id="10_0q1sn"]
+[ext_resource type="Texture2D" uid="uid://cub6fk3viv8p" path="res://art/TulipSeed.png" id="10_j7bqy"]
+[ext_resource type="Script" path="res://Plot7.gd" id="10_uycm7"]
+[ext_resource type="Texture2D" uid="uid://dw11ppyw2gmjp" path="res://art/ZinniaSeed.png" id="10_wo311"]
+[ext_resource type="Script" path="res://Plot8.gd" id="11_6g1w0"]
+[ext_resource type="Texture2D" uid="uid://c0euoy72qgw3b" path="res://art/ZinniaSeedHover.png" id="11_oxi2v"]
+[ext_resource type="Texture2D" uid="uid://c4u402qraohog" path="res://art/lockedlock.png" id="12_6t7if"]
+[ext_resource type="Script" path="res://buy_zinnia_button.gd" id="12_bjav1"]
+[ext_resource type="Texture2D" uid="uid://c82j25nnmbdsj" path="res://art/RoseSeed.png" id="12_q0jl2"]
+[ext_resource type="Texture2D" uid="uid://diddr7q7u5t6" path="res://art/hoverlockedlock.png" id="13_gmpk8"]
+[ext_resource type="Texture2D" uid="uid://bpsjycmvvnu0w" path="res://art/RoseSeedHover.png" id="13_karog"]
+[ext_resource type="Script" path="res://buy_rose_button.gd" id="14_k6qcg"]
+[ext_resource type="Texture2D" uid="uid://bctu8eeelpe6g" path="res://art/SnapdragonSeed.png" id="14_kt286"]
+[ext_resource type="Texture2D" uid="uid://d3tt3r5dubpk7" path="res://art/SnapdragonSeedHover.png" id="15_wq4rp"]
+[ext_resource type="AudioStream" uid="uid://c7d4xbb8lk1d6" path="res://art/day_music_1.mp3" id="16_djtgq"]
+[ext_resource type="Texture2D" uid="uid://ckh45jkbmx2nd" path="res://art/TulipSeedHover.png" id="16_rbjr8"]
+[ext_resource type="Texture2D" uid="uid://cpf6xu7gwneum" path="res://art/PetuniaSeed.png" id="17_1dma7"]
+[ext_resource type="AudioStream" uid="uid://d0ese5qckr6hj" path="res://art/day_sounds.mp3" id="17_xsv7e"]
+[ext_resource type="Script" path="res://buy_snapdragon_button.gd" id="18_80b0u"]
+[ext_resource type="Texture2D" uid="uid://cpfj4dyg40wy1" path="res://art/PetuniaSeedHover.png" id="18_ajbp5"]
+[ext_resource type="Texture2D" uid="uid://e2l1m0a4e628" path="res://art/LilySeed.png" id="19_tol1e"]
+[ext_resource type="AudioStream" uid="uid://wrtyt8n7i48k" path="res://art/night_sounds.mp3" id="19_xj0mo"]
+[ext_resource type="AudioStream" uid="uid://8d5ekxkbu0kr" path="res://art/night_music_delay.mp3" id="20_01rd7"]
+[ext_resource type="Texture2D" uid="uid://bpge5v70y8mo7" path="res://art/LilySeedHover.png" id="20_hfj7s"]
+[ext_resource type="Script" path="res://Plot9.gd" id="20_mjjdk"]
+[ext_resource type="AudioStream" uid="uid://csdcst86jx33v" path="res://art/rain_sounds.mp3" id="20_n4gkc"]
+[ext_resource type="Texture2D" uid="uid://bk7ultsfhrdry" path="res://art/DahliaSeed.png" id="21_ejagm"]
+[ext_resource type="AudioStream" uid="uid://c6fx0wprxvi4y" path="res://art/snow_sounds.mp3" id="21_id4d2"]
+[ext_resource type="Script" path="res://buy_tulip_button.gd" id="21_m3who"]
+[ext_resource type="Script" path="res://Plot10.gd" id="21_s77y0"]
+[ext_resource type="Texture2D" uid="uid://dcylr6for8u4d" path="res://art/LotusSeed.png" id="22_7ogf1"]
+[ext_resource type="Texture2D" uid="uid://cimrvtr8ahkgn" path="res://art/DahliaSeedHover.png" id="22_ndrte"]
+[ext_resource type="Texture2D" uid="uid://ck0p2im1ifspd" path="res://art/LotusSeedHover.png" id="23_3ipq5"]
+[ext_resource type="Script" path="res://buy_petunia_button.gd" id="24_j1v81"]
+[ext_resource type="AudioStream" uid="uid://bpror828b36h2" path="res://art/pop.mp3" id="25_efihj"]
+[ext_resource type="Script" path="res://buy_lily_button.gd" id="27_x0556"]
+[ext_resource type="Script" path="res://buy_dahlia_button.gd" id="30_aw70n"]
+[ext_resource type="Script" path="res://buy_lotus_button.gd" id="33_qrdrm"]
+[ext_resource type="AudioStream" uid="uid://bhlgdafjp0tif" path="res://art/unlock_sound.mp3" id="35_txxhp"]
+[ext_resource type="AudioStream" uid="uid://b8gnc265hoo2y" path="res://art/buy_seed_sound.mp3" id="36_2j3w7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e7rh5"]
+bg_color = Color(0.470588, 0.419608, 0.301961, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fgu5e"]
+content_margin_left = 60.0
+content_margin_top = 18.0
+content_margin_right = 60.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5lgtf"]
+content_margin_left = 60.0
+content_margin_top = 18.0
+content_margin_right = 60.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c46uu"]
+content_margin_left = 60.0
+content_margin_top = 18.0
+content_margin_right = 60.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gn6po"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_c0b8v"]
+diffuse_texture = ExtResource("5_7oc70")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_3vgf2"]
+diffuse_texture = ExtResource("6_l4n25")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lrbkq"]
+bg_color = Color(0.470588, 0.419608, 0.301961, 1)
+border_width_left = 3
+border_width_top = 2
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Garden" type="Node2D"]
+script = ExtResource("1_5yvci")
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("1_dhhxu")
+
+[node name="ShopButton" type="Button" parent="UI"]
+offset_left = 16.0
+offset_top = 584.0
+offset_right = 121.0
+offset_bottom = 645.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 40
+text = "Shop"
+flat = true
+
+[node name="ShopPanel" type="Panel" parent="UI/ShopButton"]
+visible = false
+z_index = 1
+custom_minimum_size = Vector2(1152, 552)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.152
+anchor_top = -7.967
+anchor_right = 10.819
+anchor_bottom = 1.082
+offset_left = -0.039999
+offset_top = -0.01297
+offset_right = 0.00500488
+offset_bottom = -0.0019989
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e7rh5")
+
+[node name="ShopContainer" type="TabContainer" parent="UI/ShopButton/ShopPanel"]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 1.0
+offset_right = 1058.0
+offset_bottom = 553.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/tab_selected = SubResource("StyleBoxEmpty_fgu5e")
+theme_override_styles/tab_hovered = SubResource("StyleBoxEmpty_5lgtf")
+theme_override_styles/tab_unselected = SubResource("StyleBoxEmpty_c46uu")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_gn6po")
+tab_alignment = 1
+
+[node name="Sunlight Seeds" type="GridContainer" parent="UI/ShopButton/ShopPanel/ShopContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 200
+theme_override_constants/v_separation = 150
+columns = 4
+
+[node name="BuyDaisyButton" type="TextureButton" parent="UI/ShopButton/ShopPanel/ShopContainer/Sunlight Seeds"]
+layout_direction = 1
+layout_mode = 2
+texture_normal = ExtResource("4_qsf20")
+texture_hover = ExtResource("5_swyqo")
+script = ExtResource("5_kuw2h")
+
+[node name="DaisySeedName" type="Label" parent="UI/ShopButton/ShopPanel/ShopContainer/Sunlight Seeds/BuyDaisyButton"]
+layout_mode = 0
+offset_left = -62.0
+offset_top = 72.0
+offset_right = 136.0
+offset_bottom = 204.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 32
+text = "Radiant Daisy"
+horizontal_alignment = 1
+
+[node name="DaisySeedInfo" type="Label" parent="UI/ShopButton/ShopPanel/ShopContainer/Sunlight Seeds/BuyDaisyButton"]
+layout_mode = 0
+offset_left = -52.0
+offset_top = 85.0
+offset_right = 125.0
+offset_bottom = 217.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 22
+text = "
+seed price: $3
+flower sells for: $6
+grow time: 12hrs"
+horizontal_alignment = 1
+
+[node name="BuyBellButton" type="TextureButton" parent="UI/ShopButton/ShopPanel/ShopContainer/Sunlight Seeds"]
+layout_mode = 2
+texture_normal = ExtResource("5_kkjbw")
+texture_hover = ExtResource("8_f4o7m")
+script = ExtResource("7_37lns")
+
+[node name="BellSeedName" type="Label" parent="UI/ShopButton/ShopPanel/ShopContainer/Sunlight Seeds/BuyBellButton"]
+layout_mode = 0
+offset_left = -77.0
+offset_top = 72.0
+offset_right = 155.0
+offset_bottom = 138.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 32
+text = "Azure Bellflower
+"
+horizontal_alignment = 1
+
+[node name="BellSeedInfo" type="Label" parent="UI/ShopButton/ShopPanel/ShopContainer/Sunlight Seeds/BuyBellButton"]
+layout_mode = 0
+offset_left = -50.0
+offset_top = 84.0
+offset_right = 131.0
+offset_bottom = 216.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 22
+text = "
+seed price: $5
+flower sells for: $11
+grow time: 18hrs"
+horizontal_alignment = 1
+
+[node name="BuyZinniaButton" type="TextureButton" parent="UI/ShopButton/ShopPanel/ShopContainer/Sunlight Seeds"]
+layout_mode = 2
+texture_normal = ExtResource("10_wo311")
+texture_hover = ExtResource("11_oxi2v")
+script = ExtResource("12_bjav1")
+
+[node name="ZinniaSeedName" type="Label" parent="UI/ShopButton/ShopPanel/ShopContainer/Sunlight Seeds/BuyZinniaButton"]
+layout_mode = 0
+offset_left = -60.0
+offset_top = 72.0
+offset_right = 136.0
+offset_bottom = 138.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 32
+text = "Zephyr Zinnia
+"
+horizontal_alignment = 1
+
+[node name="ZinniaSeedInfo" type="Label" parent="UI/ShopButton/ShopPanel/ShopContainer/Sunlight Seeds/BuyZinniaButton"]
+layout_mode = 0
+offset_left = -53.0
+offset_top = 83.0
+offset_right = 131.0
+offset_bottom = 215.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 22
+text = "
+seed price: $8
+flower sells for: $20
+grow time: 24hrs"
+horizontal_alignment = 1
+
+[node name="BuyRoseButton" type="TextureButton" parent="UI/ShopButton/ShopPanel/ShopContainer/Sunlight Seeds"]
+layout_mode = 2
+texture_normal = ExtResource("12_q0jl2")
+texture_hover = ExtResource("13_karog")
+script = ExtResource("14_k6qcg")
+
+[node name="RoseSeedName" type="Label" parent="UI/ShopButton/ShopPanel/ShopContainer/Sunlight Seeds/BuyRoseButton"]
+layout_mode = 0
+offset_left = -66.0
+offset_top = 72.0
+offset_right = 142.0
+offset_bottom = 138.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 32
+text = "Solarflare Rose
+"
+horizontal_alignment = 1
+
+[node name="RoseSeedInfo" type="Label" parent="UI/ShopButton/ShopPanel/ShopContainer/Sunlight Seeds/BuyRoseButton"]
+layout_mode = 0
+offset_left = -54.0
+offset_top = 83.0
+offset_right = 132.0
+offset_bottom = 215.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 22
+text = "
+seed price: $12
+flower sells for: $36
+grow time: 40hrs"
+horizontal_alignment = 1
+
+[node name="BuySnapdragonButton" type="TextureButton" parent="UI/ShopButton/ShopPanel/ShopContainer/Sunlight Seeds"]
+layout_mode = 2
+texture_normal = ExtResource("14_kt286")
+texture_hover = ExtResource("15_wq4rp")
+script = ExtResource("18_80b0u")
+
+[node name="SnapdragonSeedName" type="Label" parent="UI/ShopButton/ShopPanel/ShopContainer/Sunlight Seeds/BuySnapdragonButton"]
+layout_mode = 0
+offset_left = -103.0
+offset_top = 71.0
+offset_right = 178.0
+offset_bottom = 137.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 32
+text = "Blazing Snapdragon
+"
+horizontal_alignment = 1
+
+[node name="SnapdragonSeedInfo" type="Label" parent="UI/ShopButton/ShopPanel/ShopContainer/Sunlight Seeds/BuySnapdragonButton"]
+layout_mode = 0
+offset_left = -55.0
+offset_top = 83.0
+offset_right = 131.0
+offset_bottom = 215.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 22
+text = "
+seed price: $18
+flower sells for: $65
+grow time: 60hrs"
+horizontal_alignment = 1
+
+[node name="Moonlight Seeds" type="GridContainer" parent="UI/ShopButton/ShopPanel/ShopContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/h_separation = 200
+theme_override_constants/v_separation = 150
+columns = 4
+
+[node name="BuyTulipButton" type="TextureButton" parent="UI/ShopButton/ShopPanel/ShopContainer/Moonlight Seeds"]
+layout_direction = 1
+layout_mode = 2
+texture_normal = ExtResource("10_j7bqy")
+texture_hover = ExtResource("16_rbjr8")
+script = ExtResource("21_m3who")
+
+[node name="TulipSeedName" type="Label" parent="UI/ShopButton/ShopPanel/ShopContainer/Moonlight Seeds/BuyTulipButton"]
+layout_mode = 0
+offset_left = -44.0
+offset_top = 73.0
+offset_right = 114.0
+offset_bottom = 139.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 32
+text = "Lunar Tulip
+"
+horizontal_alignment = 1
+
+[node name="TulipSeedInfo" type="Label" parent="UI/ShopButton/ShopPanel/ShopContainer/Moonlight Seeds/BuyTulipButton"]
+layout_mode = 0
+offset_left = -54.0
+offset_top = 84.0
+offset_right = 123.0
+offset_bottom = 216.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 22
+text = "
+seed price: $3
+flower sells for: $6
+grow time: 12hrs"
+horizontal_alignment = 1
+
+[node name="BuyPetuniaButton" type="TextureButton" parent="UI/ShopButton/ShopPanel/ShopContainer/Moonlight Seeds"]
+layout_mode = 2
+texture_normal = ExtResource("17_1dma7")
+texture_hover = ExtResource("18_ajbp5")
+script = ExtResource("24_j1v81")
+
+[node name="PetuniaSeedName" type="Label" parent="UI/ShopButton/ShopPanel/ShopContainer/Moonlight Seeds/BuyPetuniaButton"]
+layout_mode = 0
+offset_left = -84.0
+offset_top = 72.0
+offset_right = 162.0
+offset_bottom = 138.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 32
+text = "Phantom Petunia
+"
+horizontal_alignment = 1
+
+[node name="PetuniaSeedInfo" type="Label" parent="UI/ShopButton/ShopPanel/ShopContainer/Moonlight Seeds/BuyPetuniaButton"]
+layout_mode = 0
+offset_left = -51.0
+offset_top = 83.0
+offset_right = 130.0
+offset_bottom = 215.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 22
+text = "
+seed price: $5
+flower sells for: $11
+grow time: 18hrs"
+horizontal_alignment = 1
+
+[node name="BuyLilyButton" type="TextureButton" parent="UI/ShopButton/ShopPanel/ShopContainer/Moonlight Seeds"]
+layout_mode = 2
+texture_normal = ExtResource("19_tol1e")
+texture_hover = ExtResource("20_hfj7s")
+script = ExtResource("27_x0556")
+
+[node name="LilySeedName" type="Label" parent="UI/ShopButton/ShopPanel/ShopContainer/Moonlight Seeds/BuyLilyButton"]
+layout_mode = 0
+offset_left = -47.0
+offset_top = 72.0
+offset_right = 122.0
+offset_bottom = 138.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 32
+text = "Twilight Lily
+"
+horizontal_alignment = 1
+
+[node name="LilySeedInfo" type="Label" parent="UI/ShopButton/ShopPanel/ShopContainer/Moonlight Seeds/BuyLilyButton"]
+layout_mode = 0
+offset_left = -53.0
+offset_top = 83.0
+offset_right = 131.0
+offset_bottom = 215.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 22
+text = "
+seed price: $8
+flower sells for: $20
+grow time: 24hrs"
+horizontal_alignment = 1
+
+[node name="BuyDahliaButton" type="TextureButton" parent="UI/ShopButton/ShopPanel/ShopContainer/Moonlight Seeds"]
+layout_mode = 2
+texture_normal = ExtResource("21_ejagm")
+texture_hover = ExtResource("22_ndrte")
+script = ExtResource("30_aw70n")
+
+[node name="DahliaSeedName" type="Label" parent="UI/ShopButton/ShopPanel/ShopContainer/Moonlight Seeds/BuyDahliaButton"]
+layout_mode = 0
+offset_left = -70.0
+offset_top = 71.0
+offset_right = 149.0
+offset_bottom = 137.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 32
+text = "Stardust Dahlia
+"
+horizontal_alignment = 1
+
+[node name="DahliaSeedInfo" type="Label" parent="UI/ShopButton/ShopPanel/ShopContainer/Moonlight Seeds/BuyDahliaButton"]
+layout_mode = 0
+offset_left = -51.0
+offset_top = 81.0
+offset_right = 135.0
+offset_bottom = 213.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 22
+text = "
+seed price: $12
+flower sells for: $36
+grow time: 40hrs"
+horizontal_alignment = 1
+
+[node name="BuyLotusButton" type="TextureButton" parent="UI/ShopButton/ShopPanel/ShopContainer/Moonlight Seeds"]
+layout_mode = 2
+texture_normal = ExtResource("22_7ogf1")
+texture_hover = ExtResource("23_3ipq5")
+script = ExtResource("33_qrdrm")
+
+[node name="LotusPrice" type="Label" parent="UI/ShopButton/ShopPanel/ShopContainer/Moonlight Seeds/BuyLotusButton"]
+layout_mode = 0
+offset_left = -59.0
+offset_top = 73.0
+offset_right = 133.0
+offset_bottom = 139.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 32
+text = "Black Lotus
+"
+horizontal_alignment = 1
+
+[node name="DaisySeedInfo" type="Label" parent="UI/ShopButton/ShopPanel/ShopContainer/Moonlight Seeds/BuyLotusButton"]
+layout_mode = 0
+offset_left = -58.0
+offset_top = 85.0
+offset_right = 128.0
+offset_bottom = 217.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 22
+text = "
+seed price: $18
+flower sells for: $65
+grow time: 60hrs"
+horizontal_alignment = 1
+
+[node name="CloseShop" type="Button" parent="UI/ShopButton/ShopPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.015
+anchor_right = 1.0
+anchor_bottom = 0.015
+offset_left = -40.0
+offset_top = -24.28
+offset_right = -10.0
+offset_bottom = 50.72
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 40
+text = "x"
+flat = true
+
+[node name="BuySeedsTutorial" type="Label" parent="UI/ShopButton/ShopPanel"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.079
+anchor_top = 0.856
+anchor_right = -0.079
+anchor_bottom = 0.856
+offset_left = 475.008
+offset_top = -162.512
+offset_right = 2768.01
+offset_bottom = 585.488
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "When buying seeds it's important to consider the time of day.
+Daytime starts at 7AM and nighttime starts at 7PM.
+Sunlight flowers only grow during the day and moonlight flowers
+only grow at night, so if you're nearing nighttime you should consider
+buying moonlight seeds, or perhaps one of each type.
+
+Your seed inventory can hold a maximum of 10 seeds at one time."
+horizontal_alignment = 1
+
+[node name="OpenShopTutorial" type="Label" parent="UI/ShopButton"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.079
+anchor_top = 0.856
+anchor_right = -0.079
+anchor_bottom = 0.856
+offset_left = 8.295
+offset_top = -124.216
+offset_right = 465.295
+offset_bottom = 81.784
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "Go to the shop 
+to buy seeds."
+horizontal_alignment = 1
+
+[node name="ClockLabel" type="Label" parent="UI"]
+offset_left = 504.0
+offset_top = 16.0
+offset_right = 648.0
+offset_bottom = 83.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+
+[node name="CurrencyLabel" type="Label" parent="UI"]
+offset_left = 239.0
+offset_top = 19.0
+offset_right = 279.0
+offset_bottom = 66.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 35
+horizontal_alignment = 1
+
+[node name="WeatherLabel" type="Label" parent="UI"]
+offset_left = 807.0
+offset_top = 20.0
+offset_right = 847.0
+offset_bottom = 67.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 35
+horizontal_alignment = 1
+
+[node name="SeedPopup" type="PopupPanel" parent="UI"]
+title = "Seeds"
+position = Vector2i(0, 562)
+size = Vector2i(1152, 85)
+max_size = Vector2i(1152, 85)
+theme = ExtResource("5_26ih2")
+script = ExtResource("5_byjdr")
+
+[node name="SeedPopupContainer" type="HBoxContainer" parent="UI/SeedPopup"]
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 1149.0
+offset_bottom = 82.0
+scale = Vector2(0.15, 0.15)
+pivot_offset = Vector2(5, 5)
+
+[node name="GardenDecor" type="Sprite2D" parent="."]
+
+[node name="GardenBackground" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(1, 1.0125)
+texture = ExtResource("1_2neu4")
+
+[node name="SnowParticles" type="CPUParticles2D" parent="GardenBackground"]
+z_index = 2
+position = Vector2(0, -327.901)
+emitting = false
+amount = 30
+lifetime = 1.2
+preprocess = 10.0
+speed_scale = 0.15
+texture = SubResource("CanvasTexture_c0b8v")
+emission_shape = 3
+emission_rect_extents = Vector2(575, 1)
+scale_amount_min = 0.1
+scale_amount_max = 0.15
+
+[node name="RainParticles" type="CPUParticles2D" parent="GardenBackground"]
+z_index = 2
+position = Vector2(0, -383.21)
+emitting = false
+amount = 40
+lifetime = 1.2
+preprocess = 2.0
+texture = SubResource("CanvasTexture_3vgf2")
+emission_shape = 3
+emission_rect_extents = Vector2(575, 1)
+scale_amount_min = 0.05
+scale_amount_max = 0.08
+
+[node name="PlotsContainer" type="Node2D" parent="."]
+position = Vector2(0, 16)
+
+[node name="Plot1" type="Node2D" parent="PlotsContainer"]
+position = Vector2(528, 520)
+script = ExtResource("4_niybl")
+
+[node name="Plot1Button" type="TextureButton" parent="PlotsContainer/Plot1"]
+offset_left = -28.0
+offset_top = -32.0
+offset_right = 172.0
+offset_bottom = 186.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("9_1buhr")
+texture_hover = ExtResource("10_0q1sn")
+
+[node name="PlacePotTutorial" type="Label" parent="PlotsContainer/Plot1/Plot1Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.079
+anchor_top = 0.856
+anchor_right = -0.079
+anchor_bottom = 0.856
+offset_left = -24.1999
+offset_top = 0.0586243
+offset_right = 274.8
+offset_bottom = 206.059
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "Click to
+place pot"
+horizontal_alignment = 1
+
+[node name="Plot2" type="Node2D" parent="PlotsContainer"]
+position = Vector2(720, 520)
+script = ExtResource("5_arccy")
+
+[node name="Plot2Button" type="TextureButton" parent="PlotsContainer/Plot2"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 168.0
+offset_bottom = 186.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("12_6t7if")
+texture_hover = ExtResource("13_gmpk8")
+
+[node name="UnlockPlotTutorial" type="Label" parent="PlotsContainer/Plot2/Plot2Button"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.079
+anchor_top = 0.856
+anchor_right = -0.079
+anchor_bottom = 0.856
+offset_left = -64.1999
+offset_top = 0.0586243
+offset_right = 285.8
+offset_bottom = 206.059
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "Click to
+unlock plot"
+horizontal_alignment = 1
+
+[node name="Plot2Unlock" type="Label" parent="PlotsContainer/Plot2"]
+visible = false
+offset_left = -80.0
+offset_top = -32.0
+offset_right = 481.0
+offset_bottom = 71.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "Pay $0 to unlock?"
+
+[node name="Plot2Yes" type="Button" parent="PlotsContainer/Plot2/Plot2Unlock"]
+layout_mode = 0
+offset_left = 106.667
+offset_top = 133.333
+offset_right = 221.667
+offset_bottom = 241.333
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "Yes"
+flat = true
+
+[node name="Plot2No" type="Button" parent="PlotsContainer/Plot2/Plot2Unlock"]
+layout_mode = 0
+offset_left = 346.667
+offset_top = 133.333
+offset_right = 436.667
+offset_bottom = 241.333
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "No"
+flat = true
+
+[node name="Plot2LowFunds" type="Label" parent="PlotsContainer/Plot2"]
+visible = false
+offset_left = -71.0
+offset_top = -63.0
+offset_right = 406.0
+offset_bottom = 143.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "You don't have 
+enough money."
+
+[node name="Plot2OK" type="Button" parent="PlotsContainer/Plot2/Plot2LowFunds"]
+layout_mode = 0
+offset_left = 133.333
+offset_top = 240.0
+offset_right = 301.333
+offset_bottom = 348.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "Okay"
+flat = true
+
+[node name="Plot3" type="Node2D" parent="PlotsContainer"]
+position = Vector2(624, 352)
+script = ExtResource("6_bis55")
+
+[node name="Plot3Button" type="TextureButton" parent="PlotsContainer/Plot3"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 176.0
+offset_bottom = 186.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("12_6t7if")
+texture_hover = ExtResource("13_gmpk8")
+
+[node name="Plot3Unlock" type="Label" parent="PlotsContainer/Plot3"]
+visible = false
+offset_left = -103.0
+offset_top = -31.0
+offset_right = 559.0
+offset_bottom = 72.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "Pay $30 to unlock?"
+
+[node name="Plot3Yes" type="Button" parent="PlotsContainer/Plot3/Plot3Unlock"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 133.333
+offset_right = 275.0
+offset_bottom = 241.333
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "Yes"
+flat = true
+
+[node name="Plot3No" type="Button" parent="PlotsContainer/Plot3/Plot3Unlock"]
+layout_mode = 0
+offset_left = 373.333
+offset_top = 133.333
+offset_right = 463.333
+offset_bottom = 241.333
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "No"
+flat = true
+
+[node name="Plot3LowFunds" type="Label" parent="PlotsContainer/Plot3"]
+visible = false
+offset_left = -71.0
+offset_top = -63.0
+offset_right = 406.0
+offset_bottom = 143.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "You don't have 
+enough money."
+
+[node name="Plot3OK" type="Button" parent="PlotsContainer/Plot3/Plot3LowFunds"]
+layout_mode = 0
+offset_left = 133.333
+offset_top = 240.0
+offset_right = 301.333
+offset_bottom = 348.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "Okay"
+flat = true
+
+[node name="Plot4" type="Node2D" parent="PlotsContainer"]
+position = Vector2(432, 352)
+script = ExtResource("7_0db5d")
+
+[node name="Plot4Button" type="TextureButton" parent="PlotsContainer/Plot4"]
+offset_left = -26.0
+offset_top = -30.0
+offset_right = 182.0
+offset_bottom = 188.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("12_6t7if")
+texture_hover = ExtResource("13_gmpk8")
+
+[node name="Plot4Unlock" type="Label" parent="PlotsContainer/Plot4"]
+visible = false
+offset_left = -103.0
+offset_top = -31.0
+offset_right = 559.0
+offset_bottom = 72.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "Pay $50 to unlock?"
+
+[node name="Plot4Yes" type="Button" parent="PlotsContainer/Plot4/Plot4Unlock"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 133.333
+offset_right = 275.0
+offset_bottom = 241.333
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "Yes"
+flat = true
+
+[node name="Plot4No" type="Button" parent="PlotsContainer/Plot4/Plot4Unlock"]
+layout_mode = 0
+offset_left = 373.333
+offset_top = 133.333
+offset_right = 463.333
+offset_bottom = 241.333
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "No"
+flat = true
+
+[node name="Plot4LowFunds" type="Label" parent="PlotsContainer/Plot4"]
+visible = false
+offset_left = -71.0
+offset_top = -63.0
+offset_right = 406.0
+offset_bottom = 143.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "You don't have 
+enough money."
+
+[node name="Plot4OK" type="Button" parent="PlotsContainer/Plot4/Plot4LowFunds"]
+layout_mode = 0
+offset_left = 133.333
+offset_top = 240.0
+offset_right = 301.333
+offset_bottom = 348.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "Okay"
+flat = true
+
+[node name="Plot5" type="Node2D" parent="PlotsContainer"]
+position = Vector2(336, 520)
+script = ExtResource("8_8vg88")
+
+[node name="Plot5Button" type="TextureButton" parent="PlotsContainer/Plot5"]
+offset_left = -28.0
+offset_top = -32.0
+offset_right = 180.0
+offset_bottom = 186.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("12_6t7if")
+texture_hover = ExtResource("13_gmpk8")
+
+[node name="Plot5Unlock" type="Label" parent="PlotsContainer/Plot5"]
+visible = false
+offset_left = -103.0
+offset_top = -31.0
+offset_right = 559.0
+offset_bottom = 72.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "Pay $100 to unlock?"
+
+[node name="Plot5Yes" type="Button" parent="PlotsContainer/Plot5/Plot5Unlock"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 133.333
+offset_right = 275.0
+offset_bottom = 241.333
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "Yes"
+flat = true
+
+[node name="Plot5No" type="Button" parent="PlotsContainer/Plot5/Plot5Unlock"]
+layout_mode = 0
+offset_left = 373.333
+offset_top = 133.333
+offset_right = 463.333
+offset_bottom = 241.333
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "No"
+flat = true
+
+[node name="Plot5LowFunds" type="Label" parent="PlotsContainer/Plot5"]
+visible = false
+offset_left = -71.0
+offset_top = -63.0
+offset_right = 406.0
+offset_bottom = 143.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "You don't have 
+enough money."
+
+[node name="Plot5OK" type="Button" parent="PlotsContainer/Plot5/Plot5LowFunds"]
+layout_mode = 0
+offset_left = 133.333
+offset_top = 240.0
+offset_right = 301.333
+offset_bottom = 348.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "Okay"
+flat = true
+
+[node name="Plot6" type="Node2D" parent="PlotsContainer"]
+position = Vector2(816, 352)
+script = ExtResource("9_nekkl")
+
+[node name="Plot6Button" type="TextureButton" parent="PlotsContainer/Plot6"]
+offset_left = -28.0
+offset_top = -31.0
+offset_right = 180.0
+offset_bottom = 187.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("12_6t7if")
+texture_hover = ExtResource("13_gmpk8")
+
+[node name="Plot6Unlock" type="Label" parent="PlotsContainer/Plot6"]
+visible = false
+offset_left = -103.0
+offset_top = -31.0
+offset_right = 559.0
+offset_bottom = 72.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "Pay $200 to unlock?"
+
+[node name="Plot6Yes" type="Button" parent="PlotsContainer/Plot6/Plot6Unlock"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 133.333
+offset_right = 275.0
+offset_bottom = 241.333
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "Yes"
+flat = true
+
+[node name="Plot6No" type="Button" parent="PlotsContainer/Plot6/Plot6Unlock"]
+layout_mode = 0
+offset_left = 373.333
+offset_top = 133.333
+offset_right = 463.333
+offset_bottom = 241.333
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "No"
+flat = true
+
+[node name="Plot6LowFunds" type="Label" parent="PlotsContainer/Plot6"]
+visible = false
+offset_left = -71.0
+offset_top = -63.0
+offset_right = 406.0
+offset_bottom = 143.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "You don't have 
+enough money."
+
+[node name="Plot6OK" type="Button" parent="PlotsContainer/Plot6/Plot6LowFunds"]
+layout_mode = 0
+offset_left = 133.333
+offset_top = 240.0
+offset_right = 301.333
+offset_bottom = 348.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "Okay"
+flat = true
+
+[node name="Plot7" type="Node2D" parent="PlotsContainer"]
+position = Vector2(240, 352)
+script = ExtResource("10_uycm7")
+
+[node name="Plot7Button" type="TextureButton" parent="PlotsContainer/Plot7"]
+offset_left = -28.0
+offset_top = -32.0
+offset_right = 180.0
+offset_bottom = 186.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("12_6t7if")
+texture_hover = ExtResource("13_gmpk8")
+
+[node name="Plot7Unlock" type="Label" parent="PlotsContainer/Plot7"]
+visible = false
+offset_left = -103.0
+offset_top = -31.0
+offset_right = 559.0
+offset_bottom = 72.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "Pay $300 to unlock?"
+
+[node name="Plot7Yes" type="Button" parent="PlotsContainer/Plot7/Plot7Unlock"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 133.333
+offset_right = 275.0
+offset_bottom = 241.333
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "Yes"
+flat = true
+
+[node name="Plot7No" type="Button" parent="PlotsContainer/Plot7/Plot7Unlock"]
+layout_mode = 0
+offset_left = 373.333
+offset_top = 133.333
+offset_right = 463.333
+offset_bottom = 241.333
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "No"
+flat = true
+
+[node name="Plot7LowFunds" type="Label" parent="PlotsContainer/Plot7"]
+visible = false
+offset_left = -71.0
+offset_top = -63.0
+offset_right = 406.0
+offset_bottom = 143.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "You don't have 
+enough money."
+
+[node name="Plot7OK" type="Button" parent="PlotsContainer/Plot7/Plot7LowFunds"]
+layout_mode = 0
+offset_left = 133.333
+offset_top = 240.0
+offset_right = 301.333
+offset_bottom = 348.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "Okay"
+flat = true
+
+[node name="Plot8" type="Node2D" parent="PlotsContainer"]
+position = Vector2(912, 520)
+script = ExtResource("11_6g1w0")
+
+[node name="Plot8Button" type="TextureButton" parent="PlotsContainer/Plot8"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 176.0
+offset_bottom = 186.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("12_6t7if")
+texture_hover = ExtResource("13_gmpk8")
+
+[node name="Plot8Unlock" type="Label" parent="PlotsContainer/Plot8"]
+visible = false
+offset_left = -103.0
+offset_top = -31.0
+offset_right = 559.0
+offset_bottom = 72.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "Pay $500 to unlock?"
+
+[node name="Plot8Yes" type="Button" parent="PlotsContainer/Plot8/Plot8Unlock"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 133.333
+offset_right = 275.0
+offset_bottom = 241.333
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "Yes"
+flat = true
+
+[node name="Plot8No" type="Button" parent="PlotsContainer/Plot8/Plot8Unlock"]
+layout_mode = 0
+offset_left = 373.333
+offset_top = 133.333
+offset_right = 463.333
+offset_bottom = 241.333
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "No"
+flat = true
+
+[node name="Plot8LowFunds" type="Label" parent="PlotsContainer/Plot8"]
+visible = false
+offset_left = -71.0
+offset_top = -63.0
+offset_right = 406.0
+offset_bottom = 143.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "You don't have 
+enough money."
+
+[node name="Plot8OK" type="Button" parent="PlotsContainer/Plot8/Plot8LowFunds"]
+layout_mode = 0
+offset_left = 133.333
+offset_top = 240.0
+offset_right = 301.333
+offset_bottom = 348.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "Okay"
+flat = true
+
+[node name="Plot9" type="Node2D" parent="PlotsContainer"]
+position = Vector2(144, 520)
+script = ExtResource("20_mjjdk")
+
+[node name="Plot9Button" type="TextureButton" parent="PlotsContainer/Plot9"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 176.0
+offset_bottom = 186.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("12_6t7if")
+texture_hover = ExtResource("13_gmpk8")
+
+[node name="Plot9Unlock" type="Label" parent="PlotsContainer/Plot9"]
+visible = false
+offset_left = -103.0
+offset_top = -31.0
+offset_right = 559.0
+offset_bottom = 72.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "Pay $800 to unlock?"
+
+[node name="Plot9Yes" type="Button" parent="PlotsContainer/Plot9/Plot9Unlock"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 133.333
+offset_right = 275.0
+offset_bottom = 241.333
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "Yes"
+flat = true
+
+[node name="Plot9No" type="Button" parent="PlotsContainer/Plot9/Plot9Unlock"]
+layout_mode = 0
+offset_left = 373.333
+offset_top = 133.333
+offset_right = 463.333
+offset_bottom = 241.333
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "No"
+flat = true
+
+[node name="Plot9LowFunds" type="Label" parent="PlotsContainer/Plot9"]
+visible = false
+offset_left = -71.0
+offset_top = -63.0
+offset_right = 406.0
+offset_bottom = 143.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "You don't have 
+enough money."
+
+[node name="Plot9OK" type="Button" parent="PlotsContainer/Plot9/Plot9LowFunds"]
+layout_mode = 0
+offset_left = 133.333
+offset_top = 240.0
+offset_right = 301.333
+offset_bottom = 348.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "Okay"
+flat = true
+
+[node name="Plot10" type="Node2D" parent="PlotsContainer"]
+position = Vector2(1008, 352)
+script = ExtResource("21_s77y0")
+
+[node name="Plot10Button" type="TextureButton" parent="PlotsContainer/Plot10"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 176.0
+offset_bottom = 186.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("12_6t7if")
+texture_hover = ExtResource("13_gmpk8")
+
+[node name="Plot10Unlock" type="Label" parent="PlotsContainer/Plot10"]
+visible = false
+offset_left = -103.0
+offset_top = -31.0
+offset_right = 559.0
+offset_bottom = 72.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "Pay $1200 to unlock?"
+
+[node name="Plot10Yes" type="Button" parent="PlotsContainer/Plot10/Plot10Unlock"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 133.333
+offset_right = 275.0
+offset_bottom = 241.333
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "Yes"
+flat = true
+
+[node name="Plot10No" type="Button" parent="PlotsContainer/Plot10/Plot10Unlock"]
+layout_mode = 0
+offset_left = 373.333
+offset_top = 133.333
+offset_right = 463.333
+offset_bottom = 241.333
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "No"
+flat = true
+
+[node name="Plot10LowFunds" type="Label" parent="PlotsContainer/Plot10"]
+visible = false
+offset_left = -71.0
+offset_top = -63.0
+offset_right = 406.0
+offset_bottom = 143.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "You don't have 
+enough money."
+
+[node name="Plot10OK" type="Button" parent="PlotsContainer/Plot10/Plot10LowFunds"]
+layout_mode = 0
+offset_left = 133.333
+offset_top = 240.0
+offset_right = 301.333
+offset_bottom = 348.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "Okay"
+flat = true
+
+[node name="DayNightCycle" type="Timer" parent="."]
+wait_time = 120.0
+autostart = true
+script = ExtResource("2_unypw")
+
+[node name="NightTutorialPanel" type="Panel" parent="DayNightCycle"]
+visible = false
+z_index = 1
+offset_top = 88.0
+offset_right = 1152.0
+offset_bottom = 296.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lrbkq")
+
+[node name="FirstNightTutorial" type="Label" parent="DayNightCycle/NightTutorialPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.079
+anchor_top = 0.856
+anchor_right = -0.079
+anchor_bottom = 0.856
+offset_left = 91.008
+offset_top = -146.048
+offset_right = 3931.01
+offset_bottom = 368.952
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 75
+text = "Your first night has begun. Any planted moonlight seeds have begun growing, and any sunlight flowers have stopped
+growing. You cannot tend to sunlight flowers during the night and vice versa. You also may have noticed a weather 
+change. Weather affects a flower's grow time. In partly cloudy weather flowers grow at their base speed. In cloudy
+and rainy weather flowers grow 25% slower. (You cannot water flowers in rainy weather, but they do still recieve
+the \"watered\" bonus) In clear weather flowers grow 25% faster; and in snowy weather flowers grow 50% slower."
+horizontal_alignment = 1
+
+[node name="CloseTutorial" type="Button" parent="DayNightCycle/NightTutorialPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.015
+anchor_right = 1.0
+anchor_bottom = 0.015
+offset_left = -24.0
+offset_top = -11.12
+offset_right = -5.0
+offset_bottom = 30.88
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_wesgo")
+theme_override_font_sizes/font_size = 25
+text = "x"
+flat = true
+
+[node name="DayMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_djtgq")
+volume_db = -5.0
+
+[node name="DaySounds" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_xsv7e")
+volume_db = 8.0
+
+[node name="NightMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("20_01rd7")
+volume_db = -6.0
+
+[node name="NightSounds" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("19_xj0mo")
+volume_db = 11.0
+
+[node name="RainSounds" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("20_n4gkc")
+volume_db = 10.0
+
+[node name="SnowSounds" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("21_id4d2")
+volume_db = 16.0
+
+[node name="PotSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("25_efihj")
+volume_db = 8.0
+
+[node name="UnlockSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("35_txxhp")
+volume_db = 6.0
+
+[node name="BuySeedSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("36_2j3w7")
+volume_db = 2.0
+
+[connection signal="pressed" from="UI/ShopButton" to="UI" method="_on_shop_button_pressed"]
+[connection signal="pressed" from="UI/ShopButton/ShopPanel/ShopContainer/Sunlight Seeds/BuyDaisyButton" to="UI/ShopButton/ShopPanel/ShopContainer/Sunlight Seeds/BuyDaisyButton" method="_on_pressed"]
+[connection signal="pressed" from="UI/ShopButton/ShopPanel/ShopContainer/Sunlight Seeds/BuyBellButton" to="UI/ShopButton/ShopPanel/ShopContainer/Sunlight Seeds/BuyBellButton" method="_on_pressed"]
+[connection signal="pressed" from="UI/ShopButton/ShopPanel/ShopContainer/Sunlight Seeds/BuyZinniaButton" to="UI/ShopButton/ShopPanel/ShopContainer/Sunlight Seeds/BuyZinniaButton" method="_on_pressed"]
+[connection signal="pressed" from="UI/ShopButton/ShopPanel/ShopContainer/Sunlight Seeds/BuyRoseButton" to="UI/ShopButton/ShopPanel/ShopContainer/Sunlight Seeds/BuyRoseButton" method="_on_pressed"]
+[connection signal="pressed" from="UI/ShopButton/ShopPanel/ShopContainer/Sunlight Seeds/BuySnapdragonButton" to="UI/ShopButton/ShopPanel/ShopContainer/Sunlight Seeds/BuySnapdragonButton" method="_on_pressed"]
+[connection signal="pressed" from="UI/ShopButton/ShopPanel/ShopContainer/Moonlight Seeds/BuyTulipButton" to="UI/ShopButton/ShopPanel/ShopContainer/Moonlight Seeds/BuyTulipButton" method="_on_pressed"]
+[connection signal="pressed" from="UI/ShopButton/ShopPanel/ShopContainer/Moonlight Seeds/BuyPetuniaButton" to="UI/ShopButton/ShopPanel/ShopContainer/Moonlight Seeds/BuyPetuniaButton" method="_on_pressed"]
+[connection signal="pressed" from="UI/ShopButton/ShopPanel/ShopContainer/Moonlight Seeds/BuyLilyButton" to="UI/ShopButton/ShopPanel/ShopContainer/Moonlight Seeds/BuyLilyButton" method="_on_pressed"]
+[connection signal="pressed" from="UI/ShopButton/ShopPanel/ShopContainer/Moonlight Seeds/BuyDahliaButton" to="UI/ShopButton/ShopPanel/ShopContainer/Moonlight Seeds/BuyDahliaButton" method="_on_pressed"]
+[connection signal="pressed" from="UI/ShopButton/ShopPanel/ShopContainer/Moonlight Seeds/BuyLotusButton" to="UI/ShopButton/ShopPanel/ShopContainer/Moonlight Seeds/BuyLotusButton" method="_on_pressed"]
+[connection signal="pressed" from="UI/ShopButton/ShopPanel/CloseShop" to="UI" method="_on_close_shop_pressed"]
+[connection signal="pressed" from="PlotsContainer/Plot1/Plot1Button" to="PlotsContainer/Plot1" method="_on_plot_1_button_pressed"]
+[connection signal="pressed" from="PlotsContainer/Plot2/Plot2Button" to="PlotsContainer/Plot2" method="_on_plot_2_button_pressed"]
+[connection signal="pressed" from="PlotsContainer/Plot2/Plot2Unlock/Plot2Yes" to="PlotsContainer/Plot2" method="_on_plot_2_yes_pressed"]
+[connection signal="pressed" from="PlotsContainer/Plot2/Plot2Unlock/Plot2No" to="PlotsContainer/Plot2" method="_on_plot_2_no_pressed"]
+[connection signal="pressed" from="PlotsContainer/Plot2/Plot2LowFunds/Plot2OK" to="PlotsContainer/Plot2" method="_on_plot_2ok_pressed"]
+[connection signal="pressed" from="PlotsContainer/Plot3/Plot3Button" to="PlotsContainer/Plot3" method="_on_plot_3_button_pressed"]
+[connection signal="pressed" from="PlotsContainer/Plot3/Plot3Unlock/Plot3Yes" to="PlotsContainer/Plot3" method="_on_plot_3_yes_pressed"]
+[connection signal="pressed" from="PlotsContainer/Plot3/Plot3Unlock/Plot3No" to="PlotsContainer/Plot3" method="_on_plot_3_no_pressed"]
+[connection signal="pressed" from="PlotsContainer/Plot3/Plot3LowFunds/Plot3OK" to="PlotsContainer/Plot3" method="_on_plot_3ok_pressed"]
+[connection signal="pressed" from="PlotsContainer/Plot4/Plot4Button" to="PlotsContainer/Plot4" method="_on_plot_4_button_pressed"]
+[connection signal="pressed" from="PlotsContainer/Plot4/Plot4Unlock/Plot4Yes" to="PlotsContainer/Plot4" method="_on_plot_4_yes_pressed"]
+[connection signal="pressed" from="PlotsContainer/Plot4/Plot4Unlock/Plot4No" to="PlotsContainer/Plot4" method="_on_plot_4_no_pressed"]
+[connection signal="pressed" from="PlotsContainer/Plot4/Plot4LowFunds/Plot4OK" to="PlotsContainer/Plot4" method="_on_plot_4ok_pressed"]
+[connection signal="pressed" from="PlotsContainer/Plot5/Plot5Button" to="PlotsContainer/Plot5" method="_on_plot_5_button_pressed"]
+[connection signal="pressed" from="PlotsContainer/Plot5/Plot5Unlock/Plot5Yes" to="PlotsContainer/Plot5" method="_on_plot_5_yes_pressed"]
+[connection signal="pressed" from="PlotsContainer/Plot5/Plot5Unlock/Plot5No" to="PlotsContainer/Plot5" method="_on_plot_5_no_pressed"]
+[connection signal="pressed" from="PlotsContainer/Plot5/Plot5LowFunds/Plot5OK" to="PlotsContainer/Plot5" method="_on_plot_5ok_pressed"]
+[connection signal="pressed" from="PlotsContainer/Plot6/Plot6Button" to="PlotsContainer/Plot6" method="_on_plot_6_button_pressed"]
+[connection signal="pressed" from="PlotsContainer/Plot6/Plot6Unlock/Plot6Yes" to="PlotsContainer/Plot6" method="_on_plot_6_yes_pressed"]
+[connection signal="pressed" from="PlotsContainer/Plot6/Plot6Unlock/Plot6No" to="PlotsContainer/Plot6" method="_on_plot_6_no_pressed"]
+[connection signal="pressed" from="PlotsContainer/Plot6/Plot6LowFunds/Plot6OK" to="PlotsContainer/Plot6" method="_on_plot_6ok_pressed"]
+[connection signal="pressed" from="PlotsContainer/Plot7/Plot7Button" to="PlotsContainer/Plot7" method="_on_plot_7_button_pressed"]
+[connection signal="pressed" from="PlotsContainer/Plot7/Plot7Unlock/Plot7Yes" to="PlotsContainer/Plot7" method="_on_plot_7_yes_pressed"]
+[connection signal="pressed" from="PlotsContainer/Plot7/Plot7Unlock/Plot7No" to="PlotsContainer/Plot7" method="_on_plot_7_no_pressed"]
+[connection signal="pressed" from="PlotsContainer/Plot7/Plot7LowFunds/Plot7OK" to="PlotsContainer/Plot7" method="_on_plot_7ok_pressed"]
+[connection signal="pressed" from="PlotsContainer/Plot8/Plot8Button" to="PlotsContainer/Plot8" method="_on_plot_8_button_pressed"]
+[connection signal="pressed" from="PlotsContainer/Plot8/Plot8Unlock/Plot8Yes" to="PlotsContainer/Plot8" method="_on_plot_8_yes_pressed"]
+[connection signal="pressed" from="PlotsContainer/Plot8/Plot8Unlock/Plot8No" to="PlotsContainer/Plot8" method="_on_plot_8_no_pressed"]
+[connection signal="pressed" from="PlotsContainer/Plot8/Plot8LowFunds/Plot8OK" to="PlotsContainer/Plot8" method="_on_plot_8ok_pressed"]
+[connection signal="pressed" from="PlotsContainer/Plot9/Plot9Button" to="PlotsContainer/Plot9" method="_on_plot_9_button_pressed"]
+[connection signal="pressed" from="PlotsContainer/Plot9/Plot9Unlock/Plot9Yes" to="PlotsContainer/Plot9" method="_on_plot_9_yes_pressed"]
+[connection signal="pressed" from="PlotsContainer/Plot9/Plot9Unlock/Plot9No" to="PlotsContainer/Plot9" method="_on_plot_9_no_pressed"]
+[connection signal="pressed" from="PlotsContainer/Plot9/Plot9LowFunds/Plot9OK" to="PlotsContainer/Plot9" method="_on_plot_9ok_pressed"]
+[connection signal="pressed" from="PlotsContainer/Plot10/Plot10Button" to="PlotsContainer/Plot10" method="_on_plot_10_button_pressed"]
+[connection signal="pressed" from="PlotsContainer/Plot10/Plot10Unlock/Plot10Yes" to="PlotsContainer/Plot10" method="_on_plot_10_yes_pressed"]
+[connection signal="pressed" from="PlotsContainer/Plot10/Plot10Unlock/Plot10No" to="PlotsContainer/Plot10" method="_on_plot_10_no_pressed"]
+[connection signal="pressed" from="PlotsContainer/Plot10/Plot10LowFunds/Plot10OK" to="PlotsContainer/Plot10" method="_on_plot_10ok_pressed"]
+[connection signal="timeout" from="DayNightCycle" to="DayNightCycle" method="_on_timeout"]
+[connection signal="pressed" from="DayNightCycle/NightTutorialPanel/CloseTutorial" to="DayNightCycle" method="_on_close_tutorial_pressed"]

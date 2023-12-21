@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b67oyygqat35p"]
+
+[ext_resource type="AudioStream" uid="uid://ch6mwcqgtrk21" path="res://art/coins_sound.mp3" id="1_8cvp0"]
+[ext_resource type="Script" path="res://global.gd" id="2_yypa4"]
+
+[node name="SellAudio" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_8cvp0")
+volume_db = 10.0
+script = ExtResource("2_yypa4")
